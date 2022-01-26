@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name" translatable="false">Calculator-TD2</string>
+    <string name="compute">Compute</string>
+    <string name="previous">Previous</string>
+    <string name="addSymbol" translatable="false">+</string>
+    <string name="subtractSymbol">-</string>
+    <string name="multiplySymbol">*</string>
+    <string name="divideSymbol">/</string>
+</resources>
