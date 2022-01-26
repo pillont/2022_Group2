@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Main activity -->
     <string name="compute">Calculer</string>
     <string name="previous">Précédent</string>
+
+    <!-- Compute activity -->
+
+    <!-- Result activity -->
+
+    <string name="operations_count_label">Nombre d\'operations : XX</string>
+    <string name="last_result_label">Dernier résultat : XX</string>
+
+    <!-- Submit menu  -->
+
+    <string name="submit">Valider</string>
+    <string name="reset">Effacer</string>
 </resources>

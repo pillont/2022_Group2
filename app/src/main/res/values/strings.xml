@@ -1,9 +1,26 @@
 <resources>
     <string name="app_name" translatable="false">Calculator-TD2</string>
+
+    <!-- Main activity -->
+
     <string name="compute">Compute</string>
     <string name="previous">Previous</string>
+
+    <!-- Compute activity -->
+
     <string name="addSymbol" translatable="false">+</string>
-    <string name="subtractSymbol">-</string>
-    <string name="multiplySymbol">*</string>
-    <string name="divideSymbol">/</string>
+    <string name="subtractSymbol" translatable="false">-</string>
+    <string name="multiplySymbol" translatable="false">*</string>
+    <string name="divideSymbol" translatable="false">/</string>
+
+
+    <!-- Result activity -->
+
+    <string name="operations_count_label">Operations count : XX</string>
+    <string name="last_result_label">Last result : XX</string>
+
+    <!-- Submit menu  -->
+
+    <string name="submit">Submit</string>
+    <string name="reset">Reset</string>
 </resources>
