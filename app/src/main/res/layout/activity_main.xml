@@ -16,10 +16,13 @@
             android:id="@+id/compute_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/compute" />
+            android:text="@string/compute"
+
+
+            />
 
         <Button
-            android:id="@+id/previous_button"
+            android:id="@+id/result_previous_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/previous" />

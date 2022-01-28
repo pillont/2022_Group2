@@ -1,10 +1,13 @@
 package fr.tpillon.calculator_td2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 
 public class ComputeActivity extends AppCompatActivity {
 
@@ -21,5 +24,25 @@ public class ComputeActivity extends AppCompatActivity {
 
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id  = item.getItemId();
+
+        switch (id) {
+            case R.id.submit_menu_button:
+                Intent intent = new Intent(this, ResultActivity.class);
+                startActivity(intent);
+            break;
+        }
+
+      /*  if(id == R.id.submit_menu_button){
+            Intent intent = new Intent(this, ResultActivity.class);
+            startActivity(intent);
+        }
+        */
+
+        return super.onOptionsItemSelected(item);
     }
 }

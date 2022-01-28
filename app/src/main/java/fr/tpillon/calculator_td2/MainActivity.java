@@ -2,6 +2,7 @@ package fr.tpillon.calculator_td2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -13,15 +14,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button computeButton = findViewById(R.id.compute_button);
-        Button previousButton = findViewById(R.id.previous_button);
+        Button previousButton = findViewById(R.id.result_previous_button);
 
         computeButton.setOnClickListener(view -> openComputeActivity());
         previousButton.setOnClickListener(view -> openPreviousActivity());
     }
 
     private void openPreviousActivity() {
+        Intent intent = new Intent(this, ResultActivity.class);
+        startActivity(intent);
     }
 
     private void openComputeActivity() {
+        Intent intent = new Intent(this, ComputeActivity.class);
+        startActivity(intent);
     }
 }
