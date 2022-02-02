@@ -34,15 +34,11 @@ public class ComputeActivity extends AppCompatActivity {
             case R.id.submit_menu_button:
                 Intent intent = new Intent(this, ResultActivity.class);
                 startActivity(intent);
-            break;
+                break;
         }
-
-      /*  if(id == R.id.submit_menu_button){
-            Intent intent = new Intent(this, ResultActivity.class);
-            startActivity(intent);
-        }
-        */
-
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }
