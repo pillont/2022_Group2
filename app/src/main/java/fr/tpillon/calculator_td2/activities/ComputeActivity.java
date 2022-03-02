@@ -1,4 +1,4 @@
-package fr.tpillon.calculator_td2;
+package fr.tpillon.calculator_td2.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,11 +13,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import fr.tpillon.calculator_td2.R;
+
 public class ComputeActivity extends AppCompatActivity {
     private TextView operationTextView;
-    private int first = 0;
-    private String operator = null;
-    private int second = 0;
+
+    private int _first = 0;
+    private String _operator =null;
+    private int _second = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,6 @@ public class ComputeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_compute);
 
          operationTextView = findViewById(R.id.operation_text_view);
-
 
          // les boutons nombres
         ArrayList<Button> list = new ArrayList<Button>();
@@ -39,8 +41,6 @@ public class ComputeActivity extends AppCompatActivity {
         list.add( findViewById(R.id.button8));
         list.add( findViewById(R.id.button9));
         list.add( findViewById(R.id.button0));
-
-
 
         // les boutons operator
         ArrayList<Button> operatorsList = new ArrayList<Button>();
@@ -60,39 +60,6 @@ public class ComputeActivity extends AppCompatActivity {
         }
     }
 
-    private void writeNumber(Button b) {
-        writeChar( b);
-
-        CharSequence sequence = b.getText();
-        String str = sequence.toString();
-        int value = Integer.parseInt(str);
-
-        if(this.operator == null){
-            this.first = value;
-        } else {
-            this.second = value;
-        }
-    }
-
-    private void writeOperator(Button b) {
-        writeChar(b);
-
-        this.operator = b.getText().toString();
-    }
-
-    /**
-     * fonction appelée quand un bouton est cliqué
-     * @param btn : le bouton sur lequel on vient de cliquer
-     */
-    private void writeChar(Button btn){
-       String number =  btn.getText().toString();
-       String ancien = this.operationTextView.getText().toString();
-
-       String result = ancien + number;
-
-       this.operationTextView.setText(result);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater =getMenuInflater();
@@ -109,12 +76,84 @@ public class ComputeActivity extends AppCompatActivity {
         switch (id) {
             case R.id.submit_menu_button:
                 Intent intent = new Intent(this, ResultActivity.class);
+                intent.putExtra(ResultActivity.FIRST_KEY, this.getFirst());
+                intent.putExtra(ResultActivity.SECOND_KEY, this.getSecond());
+                intent.putExtra(ResultActivity.OPERATOR_KEY, this.getOperator());
+
                 startActivity(intent);
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
+    private void writeNumber(Button b) {
+        CharSequence sequence = b.getText();
+        String str = sequence.toString();
+
+        if(this.getOperator() == null){
+            String resultAsString = Integer.toString(getFirst()) + str;
+            int result = Integer.parseInt(resultAsString);
+            this.setFirst(result);
+        } else {
+            String resultAsString = Integer.toString(getSecond()) + str;
+            int result = Integer.parseInt(resultAsString);
+            this.setSecond(result);
+        }
+    }
+
+    private void writeOperator(Button b) {
+        this.setOperator(b.getText().toString());
+    }
+
+    private void updateOperation() {
+        // %1$d %2$s %3$d
+        // first ope second
+        // 1 + 2
+        String text = getString(
+            // le template
+            R.string.operation_template,
+            // les variables qui sont injectées
+            getFirst(),
+            getOperator(),
+            getSecond()
+        );
+
+        this.operationTextView.setText(text);
+    }
 
 
+    private int getFirst() {
+        return _first;
+    }
+
+    private void setFirst(int _first) {
+        this._first = _first;
+        this.updateOperation();
+    }
+
+    private int getSecond() {
+        return _second;
+    }
+
+    private void setSecond(int _second) {
+        this._second = _second;
+        this.updateOperation();
+
+    }
+
+    private String getOperator() {
+        return _operator;
+    }
+
+    private void setOperator(String operator) {
+        if( operator != "+"
+        &&  operator != "-"
+        && operator != "*"
+        &&  operator != "/") {
+            throw new Error("operator invalid");
+        }
+
+        this._operator = operator;
+        this.updateOperation();
+    }
 }

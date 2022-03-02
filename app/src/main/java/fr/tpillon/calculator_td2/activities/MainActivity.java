@@ -1,10 +1,12 @@
-package fr.tpillon.calculator_td2;
+package fr.tpillon.calculator_td2.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import fr.tpillon.calculator_td2.R;
 
 public class MainActivity extends AppCompatActivity {
 

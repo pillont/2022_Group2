@@ -12,7 +12,7 @@
     <string name="subtractSymbol" translatable="false">-</string>
     <string name="multiplySymbol" translatable="false">*</string>
     <string name="divideSymbol" translatable="false">/</string>
-
+    <string name="operation_template" translatable="false">%1$d %2$s %3$d</string>
 
     <!-- Result activity -->
 
