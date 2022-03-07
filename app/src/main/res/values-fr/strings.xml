@@ -9,7 +9,9 @@
     <!-- Result activity -->
 
     <string name="operations_count_label">Nombre d\'operations : XX</string>
-    <string name="last_result_label">Dernier résultat : XX</string>
+    <string name="last_result_label">Dernier résultat : %1$f</string>
+    <string name="divide_by_zero_impossible">Division par zéro impossible</string>
+    <string name="operator_invalid">operateur invalide</string>
 
     <!-- Submit menu  -->
 

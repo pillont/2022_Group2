@@ -17,7 +17,9 @@
     <!-- Result activity -->
 
     <string name="operations_count_label">Operations count : XX</string>
-    <string name="last_result_label">Last result : XX</string>
+    <string name="last_result_label">Last result : %1$f</string>
+    <string name="divide_by_zero_impossible">Divide by zero impossible</string>
+    <string name="operator_invalid">operator invalid</string>
 
     <!-- Submit menu  -->
 

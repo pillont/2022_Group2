@@ -15,16 +15,34 @@
         tools:layout_editor_absoluteY="184dp">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/operations_count_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/operations_count_label" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/last_result_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/last_result_label" />
+            android:text="@string/last_result_label"
+            android:textColor="@color/green"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/divide_by_zero_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/divide_by_zero_impossible"
+            android:textColor="@color/red"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/invalid_operator_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/operator_invalid"
+            android:textColor="@color/red"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/result_previous_button"

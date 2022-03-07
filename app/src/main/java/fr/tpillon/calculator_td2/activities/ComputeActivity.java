@@ -19,7 +19,7 @@ public class ComputeActivity extends AppCompatActivity {
     private TextView operationTextView;
 
     private int _first = 0;
-    private String _operator =null;
+    private String _operator = "";
     private int _second = 0;
 
     @Override
@@ -90,7 +90,8 @@ public class ComputeActivity extends AppCompatActivity {
         CharSequence sequence = b.getText();
         String str = sequence.toString();
 
-        if(this.getOperator() == null){
+        String ope = this.getOperator();
+        if(ope.isEmpty()){
             String resultAsString = Integer.toString(getFirst()) + str;
             int result = Integer.parseInt(resultAsString);
             this.setFirst(result);
@@ -146,10 +147,12 @@ public class ComputeActivity extends AppCompatActivity {
     }
 
     private void setOperator(String operator) {
-        if( operator != "+"
-        &&  operator != "-"
-        && operator != "*"
-        &&  operator != "/") {
+        if(!"".equals(operator)
+        && !"+".equals(operator)
+        && !"-".equals(operator)
+        && !"*".equals(operator)
+        && !"/".equals(operator)
+        ) {
             throw new Error("operator invalid");
         }
 
