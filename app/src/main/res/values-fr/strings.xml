@@ -9,7 +9,12 @@
     <!-- Result activity -->
 
     <string name="operations_count_label">Nombre d\'operations : XX</string>
-    <string name="last_result_label">Dernier résultat : %1$f</string>
+    <!--
+                %1$ : la premiere variable passée par le code
+                .0  : nombre de décimal affiché apres la virgule
+                 f  : type double
+     -->
+    <string name="last_result_label">Dernier résultat : %1$.0f</string>
     <string name="divide_by_zero_impossible">Division par zéro impossible</string>
     <string name="operator_invalid">operateur invalide</string>
 
